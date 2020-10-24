@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:layout_gravity="center"
+
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:text="Sửa Sách"
+        android:fontFamily="@font/font"
+        android:layout_marginLeft="60dp"
+        android:textSize="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtsuatensach"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="   Nhập Tên Sách"
+        android:fontFamily="@font/font"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="50dp"
+        android:drawableLeft="@drawable/ic_library"
+
+        />
+
+    <EditText
+        android:id="@+id/txtsuatentacgia"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="   Tên Tác Giả"
+        android:inputType="textPersonName"
+        android:drawableLeft="@drawable/ic_library"
+        android:textSize="15dp"
+        android:layout_below="@+id/txtsuatensach"
+        android:textStyle="bold"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <EditText
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/txtsuagiasach"
+    android:background="@drawable/et"
+    android:ems="10"
+    android:hint="     Nhập Giá"
+    android:fontFamily="@font/font"
+    android:textSize="15dp"
+    android:textStyle="bold"
+    android:layout_below="@+id/txtsuatentacgia"
+    android:layout_marginTop="20dp"
+    android:drawableLeft="@drawable/ic_library"
+    />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtsuanhaxuatban"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="     Nhập Nhà Xuất Bản"
+        android:fontFamily="@font/font"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtsuagiasach"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_library"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtsuasoluongsach"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="     Nhập Số Lượng"
+        android:fontFamily="@font/font"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtsuanhaxuatban"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_library"
+        />
+
+    <Spinner
+        android:id="@+id/spinner_suasach"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/txtsuasoluongsach"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/spinner_suasach"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnsuasach"
+            android:text="Sửa"
+            android:background="@drawable/button"
+            ></Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnhuysach"
+            android:text="Hủy"
+            android:background="@drawable/button"
+            ></Button>
+
+    </LinearLayout>
+
+</RelativeLayout>

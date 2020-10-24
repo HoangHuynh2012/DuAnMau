@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_thongke"
+    android:paddingTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="8dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_thongke"
+            android:id="@+id/iVthongke"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên Sách: "
+            android:textStyle="bold"
+            android:fontFamily="@font/font"
+            android:id="@+id/tVtensach"
+            android:textSize="17dp"
+            android:layout_toRightOf="@id/iVthongke"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tVtensach"
+        android:fontFamily="@font/font"
+        android:id="@+id/txttensachthongke"
+        android:text="ten sach"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:textSize="15dp"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giá(VND): "
+            android:fontFamily="@font/font"
+            android:id="@+id/tVgia"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/iVthongke"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="10dp"
+            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtgiasachthongke"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/tVgia"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/txttensachthongke"
+        android:text="gia"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số Lượng(Cuốn): "
+            android:fontFamily="@font/font"
+            android:id="@+id/tVsoluong"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/iVthongke"
+            android:layout_marginTop="56dp"
+            android:layout_marginLeft="10dp"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtsoluongsachthongke"
+        android:textSize="15dp"
+        android:fontFamily="@font/font"
+        android:layout_toRightOf="@+id/tVsoluong"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="3dp"
+        android:layout_below="@+id/txtgiasachthongke"
+        android:text="so luong"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thành Tiền (VND): "
+            android:fontFamily="@font/font"
+            android:id="@+id/tVtongtien"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/iVthongke"
+            android:layout_marginTop="82dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txttongtien"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font"
+            android:layout_toRightOf="@+id/tVtongtien"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/txtsoluongsachthongke"
+            android:text="tongtien"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

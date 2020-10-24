@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_nguoidung"
+    android:elevation="6dp"
+    android:padding="8dp"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="8dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/iVnguoidung"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tVusername"
+            android:text="User Name:"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+
+            android:fontFamily="@font/font"
+            android:layout_toRightOf="@+id/iVnguoidung"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtusername"
+            android:text="username"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/font"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tVusername"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tVhoten"
+            android:text="Họ Tên:"
+            android:fontFamily="@font/font"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+
+            android:layout_below="@+id/tVusername"
+            android:layout_toRightOf="@+id/iVnguoidung"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hovaten"
+            android:textColor="@color/black"
+
+            android:id="@+id/txthoten"
+            android:layout_toRightOf="@+id/tVhoten"
+            android:fontFamily="@font/font"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEL:"
+            android:textColor="@color/black"
+
+            android:id="@+id/tVsdt"
+            android:fontFamily="@font/font"
+            android:layout_toRightOf="@+id/iVnguoidung"
+            android:layout_below="@+id/tVhoten"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sdt"
+            android:textColor="@color/black"
+            android:fontFamily="@font/font"
+            android:layout_toRightOf="@+id/tVsdt"
+            android:id="@+id/txtsdt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/menu1"
+            android:layout_toRightOf="@+id/tVsdt"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/iVmenunguoidung"
+            />
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

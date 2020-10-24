@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:id="@+id/item_topsach"
+    android:layout_margin="21dp"
+    android:padding="20dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên Sách: "
+            android:fontFamily="@font/font"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:id="@+id/tVtensachtop"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tensach"
+            android:id="@+id/txttensachtop"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/tVtensachtop"
+            android:fontFamily="@font/font"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số Lượng Đã Bán: "
+            android:fontFamily="@font/font"
+            android:textStyle="bold"
+            android:id="@+id/ivsoluongtop"
+            android:textSize="23dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tVtensachtop"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="soluong"
+            android:id="@+id/txtsoluongsachtop"
+            android:layout_toRightOf="@id/ivsoluongtop"
+            android:textSize="20dp"
+            android:textColor="#F40B0B"
+            android:textStyle="bold"
+            android:fontFamily="@font/font"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

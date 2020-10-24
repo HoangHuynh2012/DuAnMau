@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:title="Đổi Mật Khẩu"
+    android:id="@+id/doimk"
+    />
+    <item
+        android:id="@+id/thongtin"
+        android:title="Thông Tin"
+        />
+    <item
+        android:id="@+id/darkmode"
+        android:title="Dark Mode"
+        />
+<item
+    android:title="Đăng Xuất"
+    android:id="@+id/dangxuat"
+    />
+<item
+    android:title="Thoát App"
+    android:id="@+id/exit"/>
+</menu>

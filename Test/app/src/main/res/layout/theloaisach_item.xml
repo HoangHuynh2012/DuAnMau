@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_theloaisach"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="6dp"
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iVmatheloaisach"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:src="@drawable/icon_matheloaisach" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tVmatheloai"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_alignParentTop="false"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_toRightOf="@+id/iVmatheloaisach"-->
+<!--            android:fontFamily="@font/font"-->
+<!--            android:text="Mã Thể Loại: " />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtmatheloaisach"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentTop="false"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_toRightOf="@+id/tVmatheloai"-->
+<!--            android:fontFamily="@font/font"-->
+<!--            android:text="matheloai" />-->
+
+        <ImageView
+            android:id="@+id/iVtentheloai"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/icon_tentheloai" />
+
+        <TextView
+            android:id="@+id/tVtentheloai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="false"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/iVtentheloai"
+            android:fontFamily="@font/font"
+            android:text="Tên Thể Loại: " />
+
+        <TextView
+            android:id="@+id/txttentheloai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/tVtentheloai"
+            android:fontFamily="@font/font"
+            android:text="ten the loai" />
+
+        <ImageView
+            android:id="@+id/iVvitri"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/iVtentheloai"
+            android:src="@drawable/icon_vitri" />
+
+        <TextView
+            android:id="@+id/tVvitri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/iVvitri"
+            android:fontFamily="@font/font"
+            android:text="Kệ Số: " />
+
+        <TextView
+            android:id="@+id/txtvitri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="45dp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/tVvitri"
+            android:fontFamily="@font/font"
+            android:text="keso" />
+
+<!--        <ImageView-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:id="@+id/edittheloai"-->
+<!--            android:src="@drawable/icon_edit"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_toRightOf="@+id/tVmatheloai"-->
+<!--            android:layout_marginLeft="180dp"-->
+
+<!--            />-->
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:id="@+id/deletetheloai"
+            android:src="@drawable/menu1"
+            android:layout_toRightOf="@+id/tVtentheloai"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="10dp"
+            />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

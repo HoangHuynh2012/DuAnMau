@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/txtaddmasach"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="   Nhập Mã Sách"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_addsach"
+        android:drawableLeft="@drawable/ic_addsach"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="20dp"
+        />
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:id="@+id/txtaddtensach"
+          android:background="@drawable/et"
+          android:ems="10"
+          android:hint="   Nhập Tên Sách"
+          android:inputType="textPersonName"
+          android:drawableStart="@drawable/ic_addsach"
+          android:drawableLeft="@drawable/ic_addsach"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          android:layout_below="@+id/txtaddmasach"
+          android:fontFamily="@font/font"
+          android:layout_marginTop="10dp"
+          />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtaddtacgia"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="   Nhập Tên Tác Giả"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_tacgia"
+        android:drawableLeft="@drawable/ic_tacgia"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtaddtensach"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="10dp"
+        />
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:id="@+id/txtaddnhaxuatban"
+          android:background="@drawable/et"
+          android:ems="10"
+          android:hint="   Nhập Nhà Xuất Bản"
+          android:inputType="textPersonName"
+          android:drawableStart="@drawable/ic_nhaxuatban"
+          android:drawableLeft="@drawable/ic_nhaxuatban"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          android:layout_below="@+id/txtaddtacgia"
+          android:fontFamily="@font/font"
+          android:layout_marginTop="10dp"
+          />
+      <EditText
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:id="@+id/txtaddsoluong"
+          android:background="@drawable/et"
+          android:ems="10"
+          android:hint="   Nhập Số Lượng"
+          android:inputType="textPersonName"
+          android:drawableStart="@drawable/ic_addsach"
+          android:drawableLeft="@drawable/ic_addsach"
+          android:textSize="15dp"
+          android:textStyle="bold"
+          android:layout_below="@+id/txtaddnhaxuatban"
+          android:fontFamily="@font/font"
+          android:layout_marginTop="10dp"
+          />
+       <EditText
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:id="@+id/txtaddgiabia"
+           android:background="@drawable/et"
+           android:ems="10"
+           android:hint="   Nhập Giá Bìa"
+           android:inputType="textPersonName"
+           android:drawableStart="@drawable/ic_addsach"
+           android:drawableLeft="@drawable/ic_addsach"
+           android:textSize="15dp"
+           android:textStyle="bold"
+           android:layout_below="@+id/txtaddsoluong"
+           android:fontFamily="@font/font"
+           android:layout_marginTop="10dp"
+           />
+    <Spinner
+        android:id="@+id/spinner_themsach"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/txtaddgiabia"/>
+
+
+
+
+
+</RelativeLayout>

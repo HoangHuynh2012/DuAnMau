@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+tools:context=".giaodien.NguoiDungActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/toolbarnguoidung"
+        app:titleTextColor="@color/white"
+        android:background="@color/blue"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:titleMarginStart="150dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:ignore="MissingConstraints" >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quản Lí Người Dùng"
+        android:fontFamily="@font/font"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:id="@+id/toolbar_title" />
+    </androidx.appcompat.widget.Toolbar>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbarnguoidung">
+
+</androidx.recyclerview.widget.RecyclerView>
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/fl_themnguoidung"
+    android:clickable="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:src="@drawable/icon_them"/>
+</RelativeLayout>

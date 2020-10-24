@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="20dp"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/txttennguoidung"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="   Nhập Tên Người Dùng"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_id"
+        android:drawableLeft="@drawable/ic_id"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="20dp"
+      />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtaddusername"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="   Nhập User Name"
+        android:fontFamily="@font/font"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txttennguoidung"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_adduser"
+
+        />
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:id="@+id/txtaddpassword"
+         android:background="@drawable/et"
+         android:ems="10"
+         android:hint="     Nhập PassWord"
+         android:fontFamily="@font/font"
+         android:textSize="15dp"
+         android:textStyle="bold"
+         android:layout_below="@+id/txtaddusername"
+         android:layout_marginTop="20dp"
+         android:drawableLeft="@drawable/ic_addpass"
+         />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtnhaplaipw"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="      Nhập Lại Pass Word"
+        android:fontFamily="@font/font"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtaddpassword"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_addpass"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtaddsdt"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="     Nhập Số Điện Thoại"
+        android:fontFamily="@font/font"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/txtnhaplaipw"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_phone"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtaddsdt"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:id="@+id/checked"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="80dp">
+
+        <RadioButton
+            android:id="@+id/checknam"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Nam"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/checknu"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Nữ"
+            />
+    </RadioGroup>
+
+
+</RelativeLayout>

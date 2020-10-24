@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".Login.ManHinhChoActivity">
+
+    <ImageView
+        android:id="@+id/immanhinhcho"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/test"
+        android:layout_marginLeft="95dp"
+        tools:ignore="MissingConstraints"></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewmhc"
+        android:text="App Built And Developed By HoangHuynh"
+        android:layout_below="@+id/immanhinhcho"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/font"
+        android:textSize="15dp"
+        />
+
+</RelativeLayout>

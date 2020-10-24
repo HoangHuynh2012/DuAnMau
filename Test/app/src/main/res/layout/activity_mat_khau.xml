@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    tools:context=".Password.MatKhauActivity">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_marginLeft="120dp"
+        android:layout_height="100dp"
+        android:src="@drawable/test"
+        android:id="@+id/logodoimatkhau"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tentk"
+        android:layout_below="@+id/logodoimatkhau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#07000000"
+        android:textColorHint="@color/black"
+        app:counterEnabled="true"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:enabled="false"
+            android:hint="Tên Tài Khoản"
+            android:textSize="20dp"
+            android:inputType="text"
+            app:backgroundTint="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/matkhau"
+        android:layout_below="@+id/tentk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#07000000"
+        android:textColorHint="@color/black"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:errorEnabled="true"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:hint="Nhập Mật Khẩu"
+            android:inputType="textPassword"
+            app:backgroundTint="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/matkhaumoi"
+        android:layout_below="@+id/matkhau"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#07000000"
+        android:textColorHint="@color/black"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:errorEnabled="true"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mkmoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:hint="Nhập Mật Khẩu Mới"
+            android:inputType="textPassword"
+            app:backgroundTint="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/matkhaumoi2"
+        android:layout_below="@+id/matkhaumoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#07000000"
+        android:textColorHint="@color/black"
+        app:counterEnabled="true"
+        app:counterMaxLength="20"
+        app:errorEnabled="true"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mkmoi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:hint="Nhập Lại Mật Khẩu Mới"
+            android:inputType="textPassword"
+            app:backgroundTint="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/matkhaumoi2"
+    android:gravity="center"
+    android:layout_marginTop="10dp">
+       <Button
+           android:layout_width="180dp"
+           android:id="@+id/luutd"
+           android:layout_height="wrap_content"
+           android:background="@drawable/button"
+           android:textColor="#212121"
+           android:textStyle="bold"
+           android:text="Lưu Thay Đổi"></Button>
+    <Button
+        android:id="@+id/huy"
+        android:textStyle="bold"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:textColor="#212121"
+        android:text="Hủy"></Button>
+</LinearLayout>
+</RelativeLayout>
