@@ -92,6 +92,7 @@ public class HoaDonDAO {
         values.put("maHoadonChitiet", hd.getMahoadonchitiet());
         values.put("maSach", hd.getMasanpham());
         values.put("soluong", hd.getSoluongmua());
+
         db_hoadon.insert("HOADON", null, values);
     }
 }

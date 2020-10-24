@@ -113,21 +113,18 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 //choi do
-
-                //get data from database
-
-
                 String a = (editmahoadon.getText().toString());
                 String b = (editmahoadonchitiet.getText().toString());
-//                int index = editmasach.getSelectedItemPosition();
+                int index = editmasach.getSelectedItemPosition();
 //                String c = listSach.get(index).getTacGia();
                 String d = (editsoluong.getText().toString());
 
-                if (!a.trim().isEmpty() && !b.trim().isEmpty() && !d.trim().isEmpty()) {
+                if (!a.trim().isEmpty() && !b.trim().isEmpty()&& !d.trim().isEmpty()) {
                     int mahoadon = Integer.valueOf(editmahoadon.getText().toString());
                     int mahoadonchitiet = Integer.valueOf(editmahoadonchitiet.getText().toString());
                     int index2 = editmasach.getSelectedItemPosition();
-                    String tensach = listSach.get(index2).getTacGia();
+                    String tensach = listSach.get(index2).getMaSach();
+                    Toast.makeText(getContext(),tensach,Toast.LENGTH_SHORT).show();
                     int soluong = Integer.valueOf(editsoluong.getText().toString());
                     String ngay = textView.getText().toString();
                     Log.i("abc", ngay);
@@ -155,6 +152,7 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
                             .setTitleText("Không Được Bỏ Trống 1 Trường Nào !!!")
                             .setCancelButtonTextColor(R.color.blue)
                             .show();
+                    dismiss();
 //                    Toast.makeText(getContext(), "Không Được Bỏ Trống 1 Trường Nào", Toast.LENGTH_SHORT).show();
                 }
 
@@ -175,15 +173,4 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
         rc_hoadon.setAdapter(hoaDonAdapter);
     }
 
-
-//    private void openDialog1() {
-//        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), this, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-//        datePickerDialog.show();
-//
-//    }
-//
-//    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//        String date = "Ngày " + dayOfMonth + " Tháng " + month + " Năm " + year;
-//        textView.setText(date);
-//    }
 }
