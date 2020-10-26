@@ -3,6 +3,7 @@ package com.example.test.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +18,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.test.R;
+import com.example.test.dao.HoaDonChiTietDAO;
 import com.example.test.dao.HoaDonDAO;
 import com.example.test.dao.NguoiDungDAO;
+import com.example.test.giaodien.HoaDonChiTietActivity;
 import com.example.test.mode.HoaDon;
 import com.example.test.mode.NguoiDung;
 import com.example.test.mode.Sach;
@@ -36,6 +39,7 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.MyViewHold
     ArrayList<HoaDon> list_hoadon;
     HoaDonDAO hoaDonDAO;
     HoaDonAdapter hoaDonAdapter;
+    HoaDonChiTietDAO hoaDonChiTietDAO;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public HoaDonAdapter(Context context, ArrayList<HoaDon> list_hoadon) {
@@ -60,25 +64,24 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-//        Date date = Calendar.getInstance().getTime();
-////        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
-////        String strDate = dateFormat.format(list_hoadon.get(position).getNgaymuahang());
-        holder.mahoadon.setText(Integer.toString(list_hoadon.get(position).getMahoadon()));
-        holder.ngaymua.setText(((list_hoadon.get(position).getNgaymuahang())));
-        holder.tennguoimua.setText(list_hoadon.get(position).getTennguoimua());
+        holder.mahoadon.setText(Integer.toString(list_hoadon.get(position).getMahd()));
+        holder.ngaymua.setText(((list_hoadon.get(position).getNgayMua())));
+        holder.tennguoimua.setText(list_hoadon.get(position).getNguoiMua());
         holder.iVdeletehoadon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
-                builder1.setMessage("Bạn có chắc muốn xóa " + list_hoadon.get(position).getMahoadon());
+                builder1.setMessage("Bạn có chắc muốn xóa " + list_hoadon.get(position).getMahd());
                 builder1.setCancelable(true);
                 builder1.setPositiveButton(
                         "Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 hoaDonDAO = new HoaDonDAO();
-                                hoaDonDAO.delete(Integer.valueOf(list_hoadon.get(position).getMahoadon()));
-                                Toast.makeText(context, "Xóa thành công " + list_hoadon.get(position).getMahoadon(), Toast.LENGTH_SHORT).show();
+                                hoaDonChiTietDAO = new HoaDonChiTietDAO();
+                                hoaDonDAO.delete(Integer.valueOf(list_hoadon.get(position).getMahd()));
+                                hoaDonChiTietDAO.delete(Integer.valueOf(list_hoadon.get(position).getMahd()));
+                                Toast.makeText(context, "Xóa thành công " + list_hoadon.get(position).getMahd(), Toast.LENGTH_SHORT).show();
                                 capnhathoadon();
                                 dialog.cancel();
                             }
@@ -94,6 +97,16 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.MyViewHold
 
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
+            }
+        });
+
+        holder.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent x = new Intent(context, HoaDonChiTietActivity.class);
+                x.putExtra("name",list_hoadon.get(position).getNguoiMua());
+                x.putExtra("mahoadon",String.valueOf(list_hoadon.get(position).getMahd()));
+                context.startActivity(x);
             }
         });
 

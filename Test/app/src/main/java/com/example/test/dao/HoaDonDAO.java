@@ -22,7 +22,7 @@ public class HoaDonDAO {
         database_hoadon = new Database(context);
         db_hoadon = database_hoadon.getReadableDatabase();
         //truy van toan bo du lieu tu bang nguoi dung
-        String sql = "SELECT HOADON.*, SACH.tenSach FROM HOADON Inner join SACH on SACH.maSach = HOADON.maSach";
+        String sql = "SELECT * FROM HOADON";
         Cursor cs = db_hoadon.rawQuery(sql, null);
         list.clear();
         cs.moveToFirst();
@@ -31,11 +31,7 @@ public class HoaDonDAO {
                 Integer mahoadon = cs.getInt(0);
                 String ngaymua = (cs.getString(1));
                 String tennguoimua = cs.getString(2);
-                Integer mahoadonchitiet = cs.getInt(3);
-                Integer masanpham = cs.getInt(4);
-                String tensanpham = cs.getString(5);
-                Integer soluong = cs.getInt(6);
-                HoaDon hd = new HoaDon(mahoadon, ngaymua,tennguoimua, mahoadonchitiet, masanpham, tensanpham, soluong);
+                HoaDon hd = new HoaDon(mahoadon, ngaymua,tennguoimua);
                 //add vao list
                 list.add(hd);
                 //con tro next
@@ -84,11 +80,9 @@ public class HoaDonDAO {
     public void them(HoaDon hd) {
         db_hoadon = database_hoadon.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("maHoadon", hd.getMahoadon());
-        values.put("NgayMua", hd.getNgaymuahang());
-        values.put("maHoadonChitiet", hd.getMahoadonchitiet());
-        values.put("maSach", hd.getMasanpham());
-        values.put("soluong", hd.getSoluongmua());
+        values.put("maHoadon", hd.getMahd());
+        values.put("NgayMua", hd.getNgayMua());
+        values.put("NguoiMua", hd.getNguoiMua());
 
         db_hoadon.insert("HOADON", null, values);
 

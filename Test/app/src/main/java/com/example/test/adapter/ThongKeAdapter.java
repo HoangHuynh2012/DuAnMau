@@ -15,16 +15,17 @@ import com.example.test.R;
 import com.example.test.dao.SachDAO;
 import com.example.test.dao.ThongKeDAO;
 import com.example.test.mode.HoaDon;
+import com.example.test.mode.HoaDonChiTiet;
 import com.example.test.mode.Sach;
 
 import java.util.ArrayList;
 
 public class ThongKeAdapter extends RecyclerView.Adapter<ThongKeAdapter.MyViewHolder>  {
     Context context;
-    ArrayList<HoaDon> listHoadon;
+    ArrayList<HoaDonChiTiet> listHoadon;
     ThongKeDAO thongKeDAO;
 
-    public ThongKeAdapter(Context context, ArrayList<HoaDon> listHoadon) {
+    public ThongKeAdapter(Context context, ArrayList<HoaDonChiTiet> listHoadon) {
         this.context = context;
         this.listHoadon = listHoadon;
     }
@@ -40,9 +41,9 @@ public class ThongKeAdapter extends RecyclerView.Adapter<ThongKeAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.tensachtk.setText(listHoadon.get(position).getTensanpham());
-        holder.giasachtk.setText(Integer.toString(listHoadon.get(position).getGia()));
-        holder.soluongsachtk.setText(Integer.toString(listHoadon.get(position).getSoluongmua()));
+        holder.tensachtk.setText(listHoadon.get(position).getTensach());
+        holder.giasachtk.setText(Integer.toString(listHoadon.get(position).getGiabia()));
+        holder.soluongsachtk.setText(Integer.toString(listHoadon.get(position).getSoluong()));
         holder.tongtien.setText(Integer.toString(listHoadon.get(position).getTongtien()));
 
     }

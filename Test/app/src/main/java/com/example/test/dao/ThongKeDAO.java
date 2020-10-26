@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.test.database.Database;
 import com.example.test.mode.HoaDon;
+import com.example.test.mode.HoaDonChiTiet;
 import com.example.test.mode.Sach;
 
 import java.util.ArrayList;
@@ -14,21 +15,21 @@ import java.util.ArrayList;
 public class ThongKeDAO {
     static Database database;
 
-    public static ArrayList<HoaDon> tongTien(Context context){
-        ArrayList<HoaDon> listHoaDon = new ArrayList<>();
+    public static ArrayList<HoaDonChiTiet> tongTien(Context context){
+        ArrayList<HoaDonChiTiet> listHoaDon = new ArrayList<>();
         double soluong = 0;
        database = new Database(context);
         SQLiteDatabase db = database.getReadableDatabase();
-        String str ="SELECT SUM(HOADON.soluong) as \"sum\",SACH.tensach, SACH.giabia,sum(HOADON.soluong * SACH.giabia) as tongtien FROM HOADON INNER JOIN SACH on HOADON.masach = SACH.masach GROUP BY SACH.tensach;";
+        String str ="SELECT SUM(HOADONCHITIET.soluong) as \"sum\",SACH.giabia,sum(HOADONCHITIET.soluong * SACH.giabia) as tongtien,SACH.tensach FROM HOADONCHITIET INNER JOIN SACH on HOADONCHITIET.masach = SACH.masach GROUP BY SACH.tensach;";
         Cursor cs = db.rawQuery(str, null);
         listHoaDon.clear();
         cs.moveToFirst();
         while (!cs.isAfterLast()) {
             Integer soLuong = cs.getInt(0);
-            String tenSach = cs.getString(1);
-            Integer Gia = cs.getInt(2);
-            Integer tongtien = cs.getInt(3);
-            HoaDon hoaDon = new HoaDon(soLuong, tenSach, Gia, tongtien);
+            Integer Gia = cs.getInt(1);
+            Integer tongtien = cs.getInt(2);
+            String tenSach = cs.getString(3);
+            HoaDonChiTiet hoaDon = new HoaDonChiTiet(soLuong, Gia, tongtien, tenSach);
             //add vao list
             listHoaDon.add(hoaDon);
             //con tro next
@@ -38,20 +39,19 @@ public class ThongKeDAO {
         cs.close();
         return listHoaDon;
     }
-    public static ArrayList<HoaDon> top(Context context){
-        ArrayList<HoaDon> listHoaDon = new ArrayList<>();
+    public static ArrayList<HoaDonChiTiet> top(Context context){
+        ArrayList<HoaDonChiTiet> listHoaDon = new ArrayList<>();
         double top = 0;
         database = new Database(context);
         SQLiteDatabase db = database.getReadableDatabase();
-        String str ="SELECT SUM(HOADON.soluong) as \"sum\",SACH.tensach FROM HOADON INNER JOIN SACH on HOADON.masach = SACH.masach GROUP BY SACH.tensach ORDER BY\n" +
-                "\tsum DESC LIMIT 3;";
+        String str ="SELECT SUM(HOADONCHITIET.soluong) as \"sum\",SACH.tensach FROM HOADONCHITIET INNER JOIN SACH on HOADONCHITIET.masach = SACH.masach GROUP BY SACH.tensach ORDER BY sum DESC LIMIT 3;";
         Cursor cs = db.rawQuery(str, null);
         listHoaDon.clear();
         cs.moveToFirst();
         while (!cs.isAfterLast()) {
             Integer soLuong = cs.getInt(0);
             String tensach = cs.getString(1);
-            HoaDon hoaDon = new HoaDon(soLuong,tensach);
+            HoaDonChiTiet hoaDon = new HoaDonChiTiet(soLuong,tensach);
             //add vao list
             listHoaDon.add(hoaDon);
             //con tro next

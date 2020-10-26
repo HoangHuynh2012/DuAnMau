@@ -14,15 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.test.R;
 import com.example.test.dao.ThongKeDAO;
 import com.example.test.mode.HoaDon;
+import com.example.test.mode.HoaDonChiTiet;
 
 import java.util.ArrayList;
 
 public class TopSachAdapter extends RecyclerView.Adapter<TopSachAdapter.MyViewHolder> {
     Context context;
-    ArrayList<HoaDon> listHoadon;
+    ArrayList<HoaDonChiTiet> listHoadon;
     ThongKeDAO thongKeDAO;
 
-    public TopSachAdapter(Context context, ArrayList<HoaDon> listHoadon) {
+    public TopSachAdapter(Context context, ArrayList<HoaDonChiTiet> listHoadon) {
         this.context = context;
         this.listHoadon = listHoadon;
     }
@@ -38,8 +39,8 @@ public class TopSachAdapter extends RecyclerView.Adapter<TopSachAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull TopSachAdapter.MyViewHolder holder, int position) {
-        holder.txttensach.setText(listHoadon.get(position).getTensanpham());
-        holder.txtsoluong.setText(Integer.toString(listHoadon.get(position).getSoluongmua()));
+        holder.txttensach.setText(listHoadon.get(position).getTensach());
+        holder.txtsoluong.setText(Integer.toString(listHoadon.get(position).getSoluong()));
 
     }
 

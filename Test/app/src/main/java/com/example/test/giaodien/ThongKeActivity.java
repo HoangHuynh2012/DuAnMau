@@ -16,6 +16,7 @@ import com.example.test.adapter.ThongKeAdapter;
 import com.example.test.dao.SachDAO;
 import com.example.test.dao.ThongKeDAO;
 import com.example.test.mode.HoaDon;
+import com.example.test.mode.HoaDonChiTiet;
 import com.example.test.mode.Sach;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 public class ThongKeActivity extends AppCompatActivity {
     public static RecyclerView rc_thongke;
     ThongKeAdapter thongKeAdapter;
-    ArrayList<HoaDon> listHoadon;
+    ArrayList<HoaDonChiTiet> listHoadon;
     Toolbar toolbartk;
     @SuppressLint("WrongViewCast")
     @Override

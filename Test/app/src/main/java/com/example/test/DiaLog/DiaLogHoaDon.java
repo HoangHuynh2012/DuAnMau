@@ -75,8 +75,6 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
         hoaDonDAO = new HoaDonDAO();
 
         editmahoadon = view.findViewById(R.id.txtaddmahoadon);
-        editmahoadonchitiet = view.findViewById(R.id.txtaddmahoadonchitiet);
-        final Spinner editmasach = view.findViewById(R.id.spinner_muasach);
         editsoluong = view.findViewById(R.id.txtaddsoluong);
         btn_chonngay = view.findViewById(R.id.txtaddngaymua);
         final Spinner editnguoimua = view.findViewById(R.id.spinner_tennguoimua);
@@ -107,16 +105,14 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
             }
         });
 
+
         listSach = SachDAO.getAll(getContext());
+
         Log.i("list",listSach.get(0).getTenSach());
         list_nguoidung = NguoiDungDAO.getAll(getContext());
         //set adapter
-        final CustomArraySachAdapter adapter2 = new CustomArraySachAdapter(listSach, getContext());
-        editmasach.setAdapter(adapter2);
-
         final CustomArrayNguoiDungAdapter adapter3 = new CustomArrayNguoiDungAdapter(list_nguoidung, getContext());
         editnguoimua.setAdapter(adapter3);
-
         builder.setView(view);
         builder.setTitle("Thêm Hoa Don");
         builder.setNegativeButton("Thêm", new DialogInterface.OnClickListener() {
@@ -124,25 +120,16 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
             public void onClick(DialogInterface dialogInterface, int i) {
 //choi do
                 String a = (editmahoadon.getText().toString());
-                String b = (editmahoadonchitiet.getText().toString());
-                int index = editmasach.getSelectedItemPosition();
-//                String c = listSach.get(index).getTacGia();
-                String d = (editsoluong.getText().toString());
 
-                if (!a.trim().isEmpty() && !b.trim().isEmpty()&& !d.trim().isEmpty()) {
+                if (!a.trim().isEmpty()) {
                     int mahoadon = Integer.valueOf(editmahoadon.getText().toString());
-                    int mahoadonchitiet = Integer.valueOf(editmahoadonchitiet.getText().toString());
-                    int index2 = editmasach.getSelectedItemPosition();
-                    int masach = Integer.parseInt(listSach.get(index2).getMaSach());
-                    Toast.makeText(getContext(),"masach " + masach,Toast.LENGTH_SHORT).show();
-                    int soluong = Integer.valueOf(editsoluong.getText().toString());
                     int index3 = editnguoimua.getSelectedItemPosition();
                     String nguoimua =(list_nguoidung.get(index3).getUserName());
                     String ngay = textView.getText().toString();
                     Log.i("abc", ngay);
                     if (!ngay.equals("")) {
                         hoaDonDAO = new HoaDonDAO();
-                        HoaDon hd = new HoaDon(mahoadon, ngay,nguoimua, mahoadonchitiet, masach, soluong);
+                        HoaDon hd = new HoaDon(mahoadon, ngay,nguoimua);
                         hoaDonDAO.them(hd);
                             new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("Thêm thành công")

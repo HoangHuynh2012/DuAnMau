@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".giaodien.HoaDonActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/toolbarhoadonchitiet"
+        android:background="@color/blue"
+        app:titleMarginStart="150dp"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quản Lí Hóa Đơn Chi Tiết"
+            android:fontFamily="@font/font"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Người Mua : "
+        android:id="@+id/textView"
+        android:fontFamily="@font/font"
+        android:textSize="20dp"
+        android:layout_below="@+id/toolbarhoadonchitiet"
+        ></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tennguoimua"
+        android:text="abc"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/font"
+        android:textSize="20dp"
+        android:layout_below="@+id/toolbarhoadonchitiet"
+        android:layout_toRightOf="@+id/textView"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVhoadonchitiet"
+        android:layout_below="@+id/tennguoimua"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layoutAnimation="@anim/layout_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_them"
+        android:id="@+id/fl_themhoadonchitiet"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        tools:ignore="VectorDrawableCompat"/>
+
+</RelativeLayout>

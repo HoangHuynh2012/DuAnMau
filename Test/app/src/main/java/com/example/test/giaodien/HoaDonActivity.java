@@ -69,7 +69,7 @@ public class HoaDonActivity extends AppCompatActivity {
     private void filter(String text) {
         ArrayList<HoaDon> filteredList = new ArrayList<>();
         for (HoaDon item : list_hoadon) {
-            if (String.valueOf(item.getMahoadon()).toLowerCase().contains(text.toLowerCase())) {
+            if (String.valueOf(item.getMahd()).toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }
         }

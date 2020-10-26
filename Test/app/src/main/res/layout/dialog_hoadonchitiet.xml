@@ -9,12 +9,12 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/txtaddmahoadon"
+        android:id="@+id/txtaddmahoadonchitiet"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/et"
         android:ems="10"
-        android:hint="   Nhập Mã Hóa Đơn"
+        android:hint="   Nhập Mã Hóa Đơn Chi Tiết:"
         android:inputType="number"
         android:drawableStart="@drawable/ic_bill"
         android:drawableLeft="@drawable/ic_bill"
@@ -24,33 +24,43 @@
         android:fontFamily="@font/font"
         android:layout_marginTop="20dp"
         />
-    <Button
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/txtaddngaymua"
-        android:layout_below="@+id/txtaddmahoadon"
-        android:background="@drawable/ic_date"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Năm Tháng Ngày"
-        android:id="@+id/tVhienthingaythang"
-        android:layout_toRightOf="@id/txtaddngaymua"
-        android:layout_below="@+id/txtmahoadon"
-        android:layout_marginTop="130dp"
-        android:textSize="15dp"
-        android:fontFamily="@font/font"
-        android:layout_marginLeft="30dp"
-        />
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner_tennguoimua"
-        android:layout_below="@+id/txtaddngaymua"
+        android:id="@+id/sniper_addmuasach"
+        android:layout_below="@+id/txtaddmahoadonchitiet"
+        android:layout_marginTop="30dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/txtaddsoluongmua"
+        android:background="@drawable/et"
+        android:ems="10"
+        android:hint="   Nhập Số Lượng Mua:"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_bill"
+        android:drawableLeft="@drawable/ic_bill"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/sniper_addmuasach"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtaddmahoadonmua"
+        android:text="abc"
+        android:enabled="false"
+        android:fontFamily="@font/font"
+        android:layout_below="@+id/txtaddsoluongmua"
         android:layout_marginTop="20dp"
         />
+
+
+
+
 
 
 </RelativeLayout>

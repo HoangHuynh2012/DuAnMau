@@ -17,13 +17,14 @@ import com.example.test.adapter.ThongKeAdapter;
 import com.example.test.adapter.TopSachAdapter;
 import com.example.test.dao.ThongKeDAO;
 import com.example.test.mode.HoaDon;
+import com.example.test.mode.HoaDonChiTiet;
 
 import java.util.ArrayList;
 
 public class TopSachActivity extends AppCompatActivity {
     public static RecyclerView rc_topsach;
     TopSachAdapter topsachadapter;
-    ArrayList<HoaDon> listHoadon;
+    ArrayList<HoaDonChiTiet> listHoadon;
     Toolbar toolbartop;
 
     @Override

@@ -15,6 +15,8 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL(str);
         str = "INSERT INTO NGUOIDUNG VALUES(null,'admin','admin','Hoàng Văn Huỳnh','0395956275', 1)";
         db.execSQL(str);
+        str = "INSERT INTO NGUOIDUNG VALUES(null,'huynhdz','huynh','Hoàng Văn Huỳnh','0395956275', 1)";
+        db.execSQL(str);
 
 
         //du lieu the loai sach
@@ -49,11 +51,18 @@ public class Database extends SQLiteOpenHelper {
 
 
         //du lieu hoa don
-        str ="CREATE TABLE HOADON(maHoadon integer primary key, NgayMua text,NguoiMua text references NGUOIDUNG(userName)," + "maHoadonChitiet interger,maSach interger references SACH(maSach), soluong interger)";
+        str ="CREATE TABLE HOADON(maHoadon integer primary key, NgayMua text,NguoiMua text references NGUOIDUNG(userName))";
         db.execSQL(str);
-        str = "INSERT INTO HOADON VALUES('01','2020-9-26','admin',100,01,'10')";
+        str = "INSERT INTO HOADON VALUES('01','2020-9-26','admin')";
         db.execSQL(str);
-        str = "INSERT INTO HOADON VALUES('02','2020-9-28','admin',101,02,'20')";
+        str = "INSERT INTO HOADON VALUES('02','2020-9-28','admin')";
+        db.execSQL(str);
+        //du lieu hoa don chitiet
+        str ="CREATE TABLE HOADONCHITIET(maHoadonChitiet interger,maSach interger references SACH(maSach), soluong interger, mahoadon interger references HOADON(maHoadon))";
+        db.execSQL(str);
+        str = "INSERT INTO HOADONCHITIET VALUES('01',01,10,01)";
+        db.execSQL(str);
+        str = "INSERT INTO HOADONCHITIET VALUES('02',02,20,02)";
         db.execSQL(str);
 
     }
@@ -67,6 +76,8 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS THELOAISACH");
         onCreate(db);
         db.execSQL("DROP TABLE IF EXISTS HOADON");
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS HOADONCHITIET");
         onCreate(db);
     }
 }

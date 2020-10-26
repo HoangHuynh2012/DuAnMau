@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_hoadonchitiet"
+        android:paddingTop="4dp"
+        android:layout_below="@+id/tennguoimua"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/iVhoadon"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_hoadon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.017"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tVmahoadonchitiet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Mã HDCT: "
+                android:layout_marginLeft="70dp"
+                android:fontFamily="@font/font"
+                android:textSize="17dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:id="@+id/txtmahoadonchitiet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="mahd"
+                android:layout_marginLeft="190dp"
+                android:fontFamily="@font/font"
+                android:textSize="17dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="?attr/selectableItemBackground"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tVtengnuoimua"
+                android:text="Tên Sách: "
+                android:textSize="17dp"
+                android:fontFamily="@font/font"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txttensachmua"
+                android:text="tensach"
+                android:textSize="15dp"
+                android:fontFamily="@font/font"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/iVdeletehoadonct"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/icon_detele"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.904"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.032" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tVsoluong"
+                android:text="Số Lượng: "
+                android:textSize="17dp"
+                android:fontFamily="@font/font"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="60dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txtsoluongmua"
+                android:text="soluong"
+                android:textSize="15dp"
+                android:fontFamily="@font/font"
+                android:layout_marginLeft="210dp"
+                android:layout_marginTop="58dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tVtongtien"
+                android:text="Tổng Tiền(VND): "
+                android:textSize="17dp"
+                android:fontFamily="@font/font"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="85dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/txttongtien"
+                android:text="tongtien"
+                android:textSize="15dp"
+                android:fontFamily="@font/font"
+                android:layout_marginLeft="230dp"
+                android:layout_marginTop="84dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

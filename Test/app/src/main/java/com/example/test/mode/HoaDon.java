@@ -1,47 +1,14 @@
 package com.example.test.mode;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class HoaDon {
-    private int mahoadon,masanpham,soluongmua,mahoadonchitiet,gia,tongtien;
-    private String tensanpham;
+public class HoaDon implements Serializable {
+    private int mahd;
+  private String NgayMua,NguoiMua;
     private boolean expandable;
-    private String ngaymuahang,tennguoimua;
 
-    public int getGia() {
-        return gia;
-    }
-
-    public void setGia(int gia) {
-        this.gia = gia;
-    }
-
-    public String getTennguoimua() {
-        return tennguoimua;
-    }
-
-    public void setTennguoimua(String tennguoimua) {
-        this.tennguoimua = tennguoimua;
-    }
-
-    public HoaDon(Integer soLuong, String tenSach, Integer gia, Integer tongtien) {
-        this.soluongmua = soLuong;
-        this.tensanpham = tenSach;
-        this.gia = gia;
-        this.tongtien = tongtien;
-
-    }
-    public HoaDon(Integer soluong, String tensanpham){
-        this.soluongmua = soluong;
-        this.tensanpham = tensanpham;
-    }
-
-    public int getTongtien() {
-        return tongtien;
-    }
-
-    public void setTongtien(int tongtien) {
-        this.tongtien = tongtien;
+    public HoaDon() {
     }
 
     public boolean isExpandable() {
@@ -52,73 +19,33 @@ public class HoaDon {
         this.expandable = expandable;
     }
 
-    public HoaDon() {
-    }
-    public HoaDon(int mahoadon, String ngaymuahang,String tennguoimua, int mahoadonchitiet, int masanpham,String tensanpham, int soluongmua) {
-        this.mahoadon = mahoadon;
-        this.ngaymuahang = ngaymuahang;
-        this.tennguoimua = tennguoimua;
-        this.mahoadonchitiet = mahoadonchitiet;
-        this.masanpham = masanpham;
-        this.soluongmua = soluongmua;
-        this.tensanpham = tensanpham;
-        this.expandable = false;
+    public HoaDon(int mahd, String ngayMua, String nguoiMua) {
+        this.mahd = mahd;
+        NgayMua = ngayMua;
+        NguoiMua = nguoiMua;
     }
 
-    public HoaDon(int mahoadon,  String ngaymuahang,String tennguoimua,  int mahoadonchitiet,int masanpham, int soluongmua) {
-        this.mahoadon = mahoadon;
-        this.masanpham = masanpham;
-        this.tennguoimua = tennguoimua;
-        this.soluongmua = soluongmua;
-        this.mahoadonchitiet = mahoadonchitiet;
-        this.ngaymuahang = ngaymuahang;
+    public int getMahd() {
+        return mahd;
     }
 
-    public int getMahoadon() {
-        return mahoadon;
+    public void setMahd(int mahd) {
+        this.mahd = mahd;
     }
 
-    public void setMahoadon(int mahoadon) {
-        this.mahoadon = mahoadon;
+    public String getNgayMua() {
+        return NgayMua;
     }
 
-    public String getNgaymuahang() {
-        return ngaymuahang;
+    public void setNgayMua(String ngayMua) {
+        NgayMua = ngayMua;
     }
 
-    public void setNgaymuahang(String ngaymuahang) {
-        this.ngaymuahang = ngaymuahang;
+    public String getNguoiMua() {
+        return NguoiMua;
     }
 
-    public int getMahoadonchitiet() {
-        return mahoadonchitiet;
-    }
-
-    public void setMahoadonchitiet(int mahoadonchitiet) {
-        this.mahoadonchitiet = mahoadonchitiet;
-    }
-
-    public int getMasanpham() {
-        return masanpham;
-    }
-
-    public void setMasanpham(int masanpham) {
-        this.masanpham = masanpham;
-    }
-
-    public int getSoluongmua() {
-        return soluongmua;
-    }
-
-    public void setSoluongmua(int soluongmua) {
-        this.soluongmua = soluongmua;
-    }
-
-    public String getTensanpham() {
-        return tensanpham;
-    }
-
-    public void setTensanpham(String tensanpham) {
-        this.tensanpham = tensanpham;
+    public void setNguoiMua(String nguoiMua) {
+        NguoiMua = nguoiMua;
     }
 }
