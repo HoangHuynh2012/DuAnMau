@@ -30,11 +30,12 @@ public class HoaDonDAO {
             try {
                 Integer mahoadon = cs.getInt(0);
                 String ngaymua = (cs.getString(1));
-                Integer mahoadonchitiet = cs.getInt(2);
-                Integer masanpham = cs.getInt(3);
-                String tensanpham = cs.getString(4);
-                Integer soluong = cs.getInt(5);
-                HoaDon hd = new HoaDon(mahoadon, ngaymua, mahoadonchitiet, masanpham, tensanpham, soluong);
+                String tennguoimua = cs.getString(2);
+                Integer mahoadonchitiet = cs.getInt(3);
+                Integer masanpham = cs.getInt(4);
+                String tensanpham = cs.getString(5);
+                Integer soluong = cs.getInt(6);
+                HoaDon hd = new HoaDon(mahoadon, ngaymua,tennguoimua, mahoadonchitiet, masanpham, tensanpham, soluong);
                 //add vao list
                 list.add(hd);
                 //con tro next

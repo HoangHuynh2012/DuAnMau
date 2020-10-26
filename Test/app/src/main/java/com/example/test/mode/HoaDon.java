@@ -6,7 +6,7 @@ public class HoaDon {
     private int mahoadon,masanpham,soluongmua,mahoadonchitiet,gia,tongtien;
     private String tensanpham;
     private boolean expandable;
-    private String ngaymuahang;
+    private String ngaymuahang,tennguoimua;
 
     public int getGia() {
         return gia;
@@ -14,6 +14,14 @@ public class HoaDon {
 
     public void setGia(int gia) {
         this.gia = gia;
+    }
+
+    public String getTennguoimua() {
+        return tennguoimua;
+    }
+
+    public void setTennguoimua(String tennguoimua) {
+        this.tennguoimua = tennguoimua;
     }
 
     public HoaDon(Integer soLuong, String tenSach, Integer gia, Integer tongtien) {
@@ -46,9 +54,10 @@ public class HoaDon {
 
     public HoaDon() {
     }
-    public HoaDon(int mahoadon, String ngaymuahang, int mahoadonchitiet, int masanpham,String tensanpham, int soluongmua) {
+    public HoaDon(int mahoadon, String ngaymuahang,String tennguoimua, int mahoadonchitiet, int masanpham,String tensanpham, int soluongmua) {
         this.mahoadon = mahoadon;
         this.ngaymuahang = ngaymuahang;
+        this.tennguoimua = tennguoimua;
         this.mahoadonchitiet = mahoadonchitiet;
         this.masanpham = masanpham;
         this.soluongmua = soluongmua;
@@ -56,9 +65,10 @@ public class HoaDon {
         this.expandable = false;
     }
 
-    public HoaDon(int mahoadon,  String ngaymuahang,  int mahoadonchitiet,int masanpham, int soluongmua) {
+    public HoaDon(int mahoadon,  String ngaymuahang,String tennguoimua,  int mahoadonchitiet,int masanpham, int soluongmua) {
         this.mahoadon = mahoadon;
         this.masanpham = masanpham;
+        this.tennguoimua = tennguoimua;
         this.soluongmua = soluongmua;
         this.mahoadonchitiet = mahoadonchitiet;
         this.ngaymuahang = ngaymuahang;

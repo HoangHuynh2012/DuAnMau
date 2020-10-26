@@ -27,15 +27,18 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.test.R;
 import com.example.test.adapter.CustomArrayAdapter;
+import com.example.test.adapter.CustomArrayNguoiDungAdapter;
 import com.example.test.adapter.CustomArraySachAdapter;
 import com.example.test.adapter.HoaDonAdapter;
 
 import com.example.test.dao.HoaDonDAO;
 
+import com.example.test.dao.NguoiDungDAO;
 import com.example.test.dao.SachDAO;
 
 import com.example.test.mode.HoaDon;
 
+import com.example.test.mode.NguoiDung;
 import com.example.test.mode.Sach;
 
 import java.text.DateFormat;
@@ -56,7 +59,9 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
     HoaDonDAO hoaDonDAO;
     HoaDonAdapter hoaDonAdapter;
     ArrayList<HoaDon> list_hoadon;
+    ArrayList<NguoiDung> list_nguoidung;
     TextView textView;
+    NguoiDungDAO nguoiDungDAO;
     ArrayList<Sach> listSach;
     SachDAO sachDAO;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -74,6 +79,7 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
         final Spinner editmasach = view.findViewById(R.id.spinner_muasach);
         editsoluong = view.findViewById(R.id.txtaddsoluong);
         btn_chonngay = view.findViewById(R.id.txtaddngaymua);
+        final Spinner editnguoimua = view.findViewById(R.id.spinner_tennguoimua);
         textView = view.findViewById(R.id.tVhienthingaythang);
 
         Date today = new Date();
@@ -103,9 +109,13 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
 
         listSach = SachDAO.getAll(getContext());
         Log.i("list",listSach.get(0).getTenSach());
+        list_nguoidung = NguoiDungDAO.getAll(getContext());
         //set adapter
         final CustomArraySachAdapter adapter2 = new CustomArraySachAdapter(listSach, getContext());
         editmasach.setAdapter(adapter2);
+
+        final CustomArrayNguoiDungAdapter adapter3 = new CustomArrayNguoiDungAdapter(list_nguoidung, getContext());
+        editnguoimua.setAdapter(adapter3);
 
         builder.setView(view);
         builder.setTitle("Thêm Hoa Don");
@@ -126,11 +136,13 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
                     int masach = Integer.parseInt(listSach.get(index2).getMaSach());
                     Toast.makeText(getContext(),"masach " + masach,Toast.LENGTH_SHORT).show();
                     int soluong = Integer.valueOf(editsoluong.getText().toString());
+                    int index3 = editnguoimua.getSelectedItemPosition();
+                    String nguoimua =(list_nguoidung.get(index3).getUserName());
                     String ngay = textView.getText().toString();
                     Log.i("abc", ngay);
                     if (!ngay.equals("")) {
                         hoaDonDAO = new HoaDonDAO();
-                        HoaDon hd = new HoaDon(mahoadon, ngay, mahoadonchitiet, masach, soluong);
+                        HoaDon hd = new HoaDon(mahoadon, ngay,nguoimua, mahoadonchitiet, masach, soluong);
                         hoaDonDAO.them(hd);
                             new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("Thêm thành công")

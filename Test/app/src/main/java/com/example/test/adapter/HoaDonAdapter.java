@@ -65,9 +65,7 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.MyViewHold
 ////        String strDate = dateFormat.format(list_hoadon.get(position).getNgaymuahang());
         holder.mahoadon.setText(Integer.toString(list_hoadon.get(position).getMahoadon()));
         holder.ngaymua.setText(((list_hoadon.get(position).getNgaymuahang())));
-        holder.mahoadonchitiet.setText(Integer.toString(list_hoadon.get(position).getMahoadonchitiet()));
-        holder.masanpham.setText(list_hoadon.get(position).getTensanpham());
-        holder.soluong.setText(Integer.toString(list_hoadon.get(position).getSoluongmua()));
+        holder.tennguoimua.setText(list_hoadon.get(position).getTennguoimua());
         holder.iVdeletehoadon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,8 +97,6 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.MyViewHold
             }
         });
 
-        boolean isExpanded = list_hoadon.get(position).isExpandable();
-        holder.expandableLayout.setVisibility(isExpanded ? View.VISIBLE : View.GONE);
     }
 
     public void capnhathoadon() {
@@ -117,8 +113,7 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
         //buoc 1 tao layout
         CardView item;
-        TextView mahoadon, ngaymua, mahoadonchitiet, masanpham, soluong;
-        ConstraintLayout expandableLayout;
+        TextView mahoadon, ngaymua, tennguoimua;
         ImageView iVhoadon, iVdeletehoadon;
 
         public MyViewHolder(View view) {
@@ -128,13 +123,10 @@ public class HoaDonAdapter extends RecyclerView.Adapter<HoaDonAdapter.MyViewHold
             iVhoadon = view.findViewById(R.id.iVhoadon);
             iVdeletehoadon = view.findViewById(R.id.iVdeletehoadon);
             mahoadon = view.findViewById(R.id.txtmahoadon);
-            ngaymua = view.findViewById(R.id.txtngayhoadon);
-            mahoadonchitiet = view.findViewById(R.id.txtmahoadonchitiet);
-            masanpham = view.findViewById(R.id.txtmasachmua);
-            soluong = view.findViewById(R.id.txtsoluongmua);
+            ngaymua = view.findViewById(R.id.txtngaymua);
+            tennguoimua = view.findViewById(R.id.txttennguoimua);
 
             //khai bao cai xo xuong
-            expandableLayout = view.findViewById(R.id.expandableLayout);
 
             // an card view de xo xuong
             view.setOnClickListener(new View.OnClickListener() {

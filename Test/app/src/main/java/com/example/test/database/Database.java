@@ -49,11 +49,11 @@ public class Database extends SQLiteOpenHelper {
 
 
         //du lieu hoa don
-        str ="CREATE TABLE HOADON(maHoadon integer primary key, NgayMua text," + "maHoadonChitiet interger,maSach interger references SACH(maSach), soluong interger)";
+        str ="CREATE TABLE HOADON(maHoadon integer primary key, NgayMua text,NguoiMua text references NGUOIDUNG(userName)," + "maHoadonChitiet interger,maSach interger references SACH(maSach), soluong interger)";
         db.execSQL(str);
-        str = "INSERT INTO HOADON VALUES('01','2020-9-26',100,01,'10')";
+        str = "INSERT INTO HOADON VALUES('01','2020-9-26','admin',100,01,'10')";
         db.execSQL(str);
-        str = "INSERT INTO HOADON VALUES('02','2020-9-28',101,02,'20')";
+        str = "INSERT INTO HOADON VALUES('02','2020-9-28','admin',101,02,'20')";
         db.execSQL(str);
 
     }
