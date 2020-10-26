@@ -123,19 +123,19 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
                     int mahoadon = Integer.valueOf(editmahoadon.getText().toString());
                     int mahoadonchitiet = Integer.valueOf(editmahoadonchitiet.getText().toString());
                     int index2 = editmasach.getSelectedItemPosition();
-                    String tensach = listSach.get(index2).getMaSach();
-                    Toast.makeText(getContext(),tensach,Toast.LENGTH_SHORT).show();
+                    int masach = Integer.parseInt(listSach.get(index2).getMaSach());
+                    Toast.makeText(getContext(),"masach " + masach,Toast.LENGTH_SHORT).show();
                     int soluong = Integer.valueOf(editsoluong.getText().toString());
                     String ngay = textView.getText().toString();
                     Log.i("abc", ngay);
                     if (!ngay.equals("")) {
                         hoaDonDAO = new HoaDonDAO();
-                        HoaDon hd = new HoaDon(mahoadon, ngay, mahoadonchitiet, tensach, soluong);
+                        HoaDon hd = new HoaDon(mahoadon, ngay, mahoadonchitiet, masach, soluong);
                         hoaDonDAO.them(hd);
-                        new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE)
-                                .setTitleText("Thêm thành công")
-                                .setCancelButtonTextColor(R.color.blue)
-                                .show();
+                            new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE)
+                                    .setTitleText("Thêm thành công")
+                                    .setCancelButtonTextColor(R.color.blue)
+                                    .show();
 //                        Toast.makeText(getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
                         capnhathoadon();
                         dismiss();

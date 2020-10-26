@@ -2,19 +2,15 @@ package com.example.test.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.test.database.Database;
 import com.example.test.mode.HoaDon;
-import com.example.test.mode.Sach;
 
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class HoaDonDAO {
     static SQLiteDatabase db_hoadon;
@@ -36,8 +32,8 @@ public class HoaDonDAO {
                 String ngaymua = (cs.getString(1));
                 Integer mahoadonchitiet = cs.getInt(2);
                 Integer masanpham = cs.getInt(3);
-                Integer soluong = cs.getInt(4);
-                String tensanpham = cs.getString(5);
+                String tensanpham = cs.getString(4);
+                Integer soluong = cs.getInt(5);
                 HoaDon hd = new HoaDon(mahoadon, ngaymua, mahoadonchitiet, masanpham, tensanpham, soluong);
                 //add vao list
                 list.add(hd);
@@ -94,5 +90,6 @@ public class HoaDonDAO {
         values.put("soluong", hd.getSoluongmua());
 
         db_hoadon.insert("HOADON", null, values);
+
     }
 }

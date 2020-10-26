@@ -56,9 +56,9 @@ public class HoaDon {
         this.expandable = false;
     }
 
-    public HoaDon(int mahoadon,  String ngaymuahang,  int mahoadonchitiet,String tensach, int soluongmua) {
+    public HoaDon(int mahoadon,  String ngaymuahang,  int mahoadonchitiet,int masanpham, int soluongmua) {
         this.mahoadon = mahoadon;
-        this.tensanpham = tensach;
+        this.masanpham = masanpham;
         this.soluongmua = soluongmua;
         this.mahoadonchitiet = mahoadonchitiet;
         this.ngaymuahang = ngaymuahang;
