@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".giaodien.SachActivity"
+    android:layout_gravity="center"
+    android:gravity="center"
     android:orientation="vertical"
     android:background="@color/white"
     >
@@ -24,17 +26,35 @@
             android:layout_gravity="center"
             android:id="@+id/toolbar_thongke" />
     </androidx.appcompat.widget.Toolbar>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarthongke"
+        android:text="Thống Kê Theo Số Lượng"
+        android:gravity="center"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:padding="10dp"
+        android:id="@+id/btn_chuyen"
+        />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rVthongke"
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rVthongke"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:padding="4dp"-->
+<!--        android:layoutAnimation="@anim/layout"-->
+<!--        android:layout_below="@+id/toolbarthongke"-->
+<!--        android:scrollbars="vertical"-->
+<!--        tools:ignore="NotSibling">-->
+
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+    <com.github.mikephil.charting.charts.PieChart
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="4dp"
-        android:layoutAnimation="@anim/layout"
-        android:layout_below="@+id/toolbarthongke"
-        android:scrollbars="vertical"
-        tools:ignore="NotSibling">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_below="@id/btn_chuyen"
+        android:id="@+id/pieChart"
+        />
 
 </RelativeLayout>

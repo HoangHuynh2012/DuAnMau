@@ -27,20 +27,27 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <ImageView
-        android:id="@+id/ivtopsach"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="307dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_topsach" />
-    <androidx.recyclerview.widget.RecyclerView
+<!--    <ImageView-->
+<!--        android:id="@+id/ivtopsach"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="307dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:src="@drawable/ic_topsach" />-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/rctopsach"-->
+<!--        android:layout_below="@+id/ivtopsach"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        />-->
+
+    <com.github.mikephil.charting.charts.BarChart
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rctopsach"
-        android:layout_below="@+id/ivtopsach"
-        android:layout_marginTop="10dp"
+        android:id="@+id/barchart"
+        android:layout_below="@+id/toolbartopsach"
         />
 
 

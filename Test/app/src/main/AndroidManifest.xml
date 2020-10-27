@@ -9,20 +9,20 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".giaodien.HoaDonChiTietActivity"></activity>
-        <activity android:name=".giaodien.TopSachActivity"
+        <activity android:name=".giaodien.ThongKe2Activity"
+            android:parentActivityName=".giaodien.ThongKeActivity"></activity>
+        <activity android:name=".giaodien.HoaDonChiTietActivity" />
+        <activity
+            android:name=".giaodien.TopSachActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".giaodien.ThongKeActivity"
+        <activity
+            android:name=".giaodien.ThongKeActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Login.ManHinhChoActivity" >
-
-        </activity>
+        <activity android:name=".Login.ManHinhChoActivity"></activity>
         <activity android:name=".ThongTinActivity" />
         <activity
             android:name=".giaodien.HoaDonActivity"
-            android:parentActivityName=".MainActivity" >
-
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".giaodien.TheLoaiSachActivity"
             android:parentActivityName=".MainActivity" />
@@ -33,15 +33,13 @@
             android:name=".giaodien.NguoiDungActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".Password.MatKhauActivity" />
-        <activity android:name=".Login.LoginActivity">
+        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 
