@@ -58,7 +58,7 @@ public class Sach {
         this.gia = gia;
     }
 
-    public Sach(String tensach, String tentacgia, Integer gia, String nhaxuatban, String soluong, int maloai) {
+    public Sach(String tensach, String tentacgia, int gia, String nhaxuatban, String soluong, int maloai) {
         this.tenSach = tensach;
         this.tacGia = tentacgia;
         this.gia = gia;

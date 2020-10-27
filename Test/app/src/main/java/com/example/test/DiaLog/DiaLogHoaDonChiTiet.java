@@ -1,5 +1,6 @@
 package com.example.test.DiaLog;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -10,11 +11,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
@@ -44,10 +47,14 @@ import static com.example.test.giaodien.HoaDonChiTietActivity.rc_hoadonchiitet;
 
 public class DiaLogHoaDonChiTiet extends AppCompatDialogFragment {
     HoaDonChiTietDAO hoaDonChiTietDAO;
-    TextView editmahoadonct, editsoluongmua, editmahoadonmua;
+    TextView editmahoadonct, editsoluongmua, editmahoadonmua,tongtien;
     ArrayList<Sach> listSach;
     ArrayList<HoaDonChiTiet> list_hoadonchitiet;
     HoaDonChiTietAdapter hoaDonChiTietAdapter;
+    Button btn_tru, btn_cong;
+    private int biendem,giabia;
+
+
 
 
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -61,15 +68,47 @@ public class DiaLogHoaDonChiTiet extends AppCompatDialogFragment {
         final Spinner edittensachmua = view.findViewById(R.id.sniper_addmuasach);
         editsoluongmua = view.findViewById(R.id.txtaddsoluongmua);
         editmahoadonmua = view.findViewById(R.id.txtaddmahoadonmua);
+        btn_tru = view.findViewById(R.id.tru);
+        btn_cong = view.findViewById(R.id.cong);
+        tongtien = view.findViewById(R.id.tongtien);
         Intent intent = ((Activity) getContext()).getIntent();
-        String a = (intent.getStringExtra("mahoadon"));
 
+        btn_tru.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick(View view) {
+                tru();
+            }
+        });
+
+        btn_cong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cong();
+            }
+        });
+
+        String a = (intent.getStringExtra("mahoadon"));
         editmahoadonmua.setText(a);
         listSach = SachDAO.getAll(getContext());
 
         //set adapter
         final CustomArraySachAdapter adapter = new CustomArraySachAdapter(listSach, getContext());
         edittensachmua.setAdapter(adapter);
+
+         edittensachmua.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+             @Override
+             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                 giabia = Integer.parseInt(String.valueOf(listSach.get(i).getGia()));
+             }
+
+             @Override
+             public void onNothingSelected(AdapterView<?> adapterView) {
+
+             }
+         });
+
+
         builder.setView(view);
         builder.setTitle("Thêm Hóa Đơn Chi Tiết");
         builder.setNegativeButton("Thêm", new DialogInterface.OnClickListener() {
@@ -78,6 +117,7 @@ public class DiaLogHoaDonChiTiet extends AppCompatDialogFragment {
 //choi do
                 String a = (editmahoadonct.getText().toString());
                 String b = (editsoluongmua.getText().toString());
+
 
                 if (!a.trim().isEmpty() && !b.trim().isEmpty()) {
                     int mahoadonct = Integer.valueOf(editmahoadonct.getText().toString());
@@ -115,6 +155,28 @@ public class DiaLogHoaDonChiTiet extends AppCompatDialogFragment {
         return builder.create();
     }
 
+    @SuppressLint("SetTextI18n")
+    public void tru() {
+         if (biendem == 0) {
+             editsoluongmua.setText("0");
+         } else {
+
+             biendem--;
+             editsoluongmua.setText(String.valueOf(biendem));
+             tongtien.setText("Tổng Tiền: " + (biendem * giabia) +" ");
+
+         }
+
+    }public void cong() {
+        biendem++;
+        editsoluongmua.setText(String.valueOf(biendem));
+        tongtien.setText("Tổng Tiền: " + (biendem * giabia) +" ");
+    }
+
+    private void congtru() {
+        biendem = 0;
+        editsoluongmua.setText(String.valueOf(biendem));
+    }
     public void capnhathoadon() {
         Intent intent = ((Activity) getContext()).getIntent();
         Integer a = Integer.valueOf(intent.getStringExtra("mahoadon"));

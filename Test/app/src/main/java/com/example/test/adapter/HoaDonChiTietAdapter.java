@@ -52,13 +52,13 @@ public class HoaDonChiTietAdapter extends RecyclerView.Adapter<HoaDonChiTietAdap
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
-        Intent intent = ((Activity) context).getIntent();
-        String a = intent.getStringExtra("mahd");
+
 
         holder.mahoadonchitiet.setText(Integer.toString(list_hoadonchitiet.get(position).getMahdct()));
         holder.tensach.setText(((list_hoadonchitiet.get(position).getTensach())));
         holder.soluong.setText(Integer.toString(list_hoadonchitiet.get(position).getSoluong()));
         holder.tongtien.setText(Integer.toString(list_hoadonchitiet.get(position).getTongtien()));
+        String giabia = Integer.toString(list_hoadonchitiet.get(position).getGiabia());
 
 
         holder.iVdeletehoadon.setOnClickListener(new View.OnClickListener() {

@@ -19,6 +19,7 @@ import com.example.test.MainActivity;
 import com.example.test.Password.MatKhauActivity;
 import com.example.test.R;
 import com.example.test.dao.NguoiDungDAO;
+import com.example.test.database.Database;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -27,7 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     CheckBox chkStatus;
     public static User USER = null;
     EditText tk, mk;
-
+    public static String a;
+    Database database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     void checktk() {
-        String a = tk.getText().toString();
+        a = tk.getText().toString();
         String b = mk.getText().toString();
         boolean check = chkStatus.isChecked();
         User user = new User(tk, mk);
@@ -64,10 +66,11 @@ public class LoginActivity extends AppCompatActivity {
             //
             Intent x = new Intent(LoginActivity.this, MainActivity.class);
             x.putExtra("taikhoandadangnhap", a);
-            startActivity(x);
+            database.user= a;
             luuTT(a, b, check);
             USER = user;
 //            Bundle bundle = new Bundle();
+            startActivity(x);
             finish();
         } else if (a.equals("") && b.equals("")) {
             Toast.makeText(LoginActivity.this, "Vui Lòng Nhập Tài Khoản Và Mật Khẩu", Toast.LENGTH_LONG).show();

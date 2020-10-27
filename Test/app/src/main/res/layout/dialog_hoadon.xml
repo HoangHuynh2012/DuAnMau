@@ -44,11 +44,16 @@
         android:fontFamily="@font/font"
         android:layout_marginLeft="30dp"
         />
-    <Spinner
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner_tennguoimua"
         android:layout_below="@+id/txtaddngaymua"
+        android:text="day la text view ne"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:enabled="false"
+        android:fontFamily="@font/font"
         android:layout_marginTop="20dp"
         />
 

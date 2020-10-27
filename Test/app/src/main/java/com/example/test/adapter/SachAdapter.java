@@ -85,7 +85,7 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.MyViewHolder> 
         final Spinner spinner_editsach = view.findViewById(R.id.spinner_suasach);
 
         listTheloaisach = new ArrayList<>();
-
+        final String masach1 = sach.getMaSach();
         edittensach.setText(sach.getTenSach());
         edittagia.setText(sach.getTacGia());
         editgia.setText(Integer.toString(sach.getGia()));
@@ -114,14 +114,15 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.MyViewHolder> 
         btn_suanguoidung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String masach = masach1;
                 String tensach = edittensach.getText().toString();
                 String tentacgia = edittagia.getText().toString();
-                Integer gia = Integer.valueOf(editgia.getText().toString());
+                int gia = Integer.valueOf(editgia.getText().toString());
                 String nhaxuatban = editnhaxuatban.getText().toString();
                 String soluong = editsoluong.getText().toString();
                 int index = spinner_editsach.getSelectedItemPosition();
                 int maTheLoai = listTheloaisach.get(index).getMaTheLoai();
-                Sach sach2 = new Sach(tensach, tentacgia, gia, nhaxuatban, soluong, maTheLoai);
+                Sach sach2 = new Sach(masach,tensach, tentacgia, gia, nhaxuatban, soluong, maTheLoai);
                 sachDAO = new SachDAO();
                 if (sachDAO.update(sach2, context)) {
                     Toast.makeText(context, "Cập nhật thành công", Toast.LENGTH_SHORT).show();

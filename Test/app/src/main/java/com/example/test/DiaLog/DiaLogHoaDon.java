@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +26,8 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.test.Login.LoginActivity;
+import com.example.test.Login.User;
 import com.example.test.R;
 import com.example.test.adapter.CustomArrayAdapter;
 import com.example.test.adapter.CustomArrayNguoiDungAdapter;
@@ -36,6 +39,9 @@ import com.example.test.dao.HoaDonDAO;
 import com.example.test.dao.NguoiDungDAO;
 import com.example.test.dao.SachDAO;
 
+import com.example.test.database.Database;
+import com.example.test.giaodien.HoaDonActivity;
+import com.example.test.giaodien.HoaDonChiTietActivity;
 import com.example.test.mode.HoaDon;
 
 import com.example.test.mode.NguoiDung;
@@ -65,7 +71,7 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
     ArrayList<Sach> listSach;
     SachDAO sachDAO;
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
+    Database database;
 
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -77,7 +83,7 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
         editmahoadon = view.findViewById(R.id.txtaddmahoadon);
         editsoluong = view.findViewById(R.id.txtaddsoluong);
         btn_chonngay = view.findViewById(R.id.txtaddngaymua);
-        final Spinner editnguoimua = view.findViewById(R.id.spinner_tennguoimua);
+        final TextView editnguoimua = view.findViewById(R.id.spinner_tennguoimua);
         textView = view.findViewById(R.id.tVhienthingaythang);
 
         Date today = new Date();
@@ -104,17 +110,14 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
                 datePickerDialog.show();
             }
         });
-
-
+        Intent x = getActivity().getIntent();
+        String title = database.user;
+        editnguoimua.setText(title);
         listSach = SachDAO.getAll(getContext());
 
         Log.i("list",listSach.get(0).getTenSach());
-        list_nguoidung = NguoiDungDAO.getAll(getContext());
-        //set adapter
-        final CustomArrayNguoiDungAdapter adapter3 = new CustomArrayNguoiDungAdapter(list_nguoidung, getContext());
-        editnguoimua.setAdapter(adapter3);
         builder.setView(view);
-        builder.setTitle("Thêm Hoa Don");
+        builder.setTitle("Thêm Hoá Đơn");
         builder.setNegativeButton("Thêm", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -123,8 +126,7 @@ public class DiaLogHoaDon extends AppCompatDialogFragment {
 
                 if (!a.trim().isEmpty()) {
                     int mahoadon = Integer.valueOf(editmahoadon.getText().toString());
-                    int index3 = editnguoimua.getSelectedItemPosition();
-                    String nguoimua =(list_nguoidung.get(index3).getUserName());
+                    String nguoimua =editnguoimua.getText().toString();
                     String ngay = textView.getText().toString();
                     Log.i("abc", ngay);
                     if (!ngay.equals("")) {

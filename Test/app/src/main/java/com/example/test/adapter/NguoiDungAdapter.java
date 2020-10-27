@@ -131,12 +131,6 @@ public class NguoiDungAdapter extends RecyclerView.Adapter<NguoiDungAdapter.MyVi
                 popup = new PopupMenu(context, view);
                 MenuInflater inflater = popup.getMenuInflater();
                 inflater.inflate(R.menu.menuedit_delete, popup.getMenu());
-//                   if (xoayimg) {
-////                holder.iVmenunguoidung.setAnimation(AnimationUtils.loadAnimation(context,R.anim.rotate_indefinitely));
-////                    holder.iVmenunguoidung.setPivotX(holder.iVmenunguoidung.getWidth() / 2);
-////                    holder.iVmenunguoidung.setPivotY(holder.iVmenunguoidung.getHeight() / 2);
-//                holder.iVmenunguoidung.setRotation(90);
-                xoayimg = false;
                 popup.show();
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override

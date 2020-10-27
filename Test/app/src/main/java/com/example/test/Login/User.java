@@ -2,7 +2,9 @@ package com.example.test.Login;
 
 import android.widget.EditText;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String username;
     private String password;
 

@@ -31,21 +31,48 @@
         android:layout_below="@+id/txtaddmahoadonchitiet"
         android:layout_marginTop="30dp"
         />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/txtaddsoluongmua"
-        android:background="@drawable/et"
-        android:ems="10"
-        android:hint="   Nhập Số Lượng Mua:"
-        android:inputType="textPersonName"
-        android:drawableStart="@drawable/ic_bill"
-        android:drawableLeft="@drawable/ic_bill"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/sniper_addmuasach"
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/congtru"
+       android:layout_below="@+id/sniper_addmuasach"
+       android:orientation="horizontal">
+       <Button
+           android:layout_width="90dp"
+           android:layout_height="60dp"
+           android:id="@+id/tru"
+           android:text="-"
+           android:fontFamily="@font/font"
+           android:textSize="30dp"
+           ></Button>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/txtaddsoluongmua"
+           android:text="0"
+           android:fontFamily="@font/font"
+           android:textSize="30dp"
+           android:layout_marginLeft="50dp"
+           />
+       <Button
+           android:layout_width="90dp"
+           android:layout_height="60dp"
+           android:id="@+id/cong"
+           android:layout_marginLeft="50dp"
+           android:text="+"
+           android:fontFamily="@font/font"
+           android:textSize="30dp"
+           />
+
+   </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tongtien"
+        android:layout_below="@+id/congtru"
+        android:textSize="30dp"
         android:fontFamily="@font/font"
-        android:layout_marginTop="10dp"
+        android:text=""
         />
     <EditText
         android:layout_width="match_parent"
@@ -54,7 +81,7 @@
         android:text="abc"
         android:enabled="false"
         android:fontFamily="@font/font"
-        android:layout_below="@+id/txtaddsoluongmua"
+        android:layout_below="@+id/tongtien"
         android:layout_marginTop="20dp"
         />
 

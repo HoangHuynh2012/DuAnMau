@@ -71,9 +71,9 @@ public class SachDAO {
         ContentValues values = new ContentValues();
         values.put("tenSach", suasach.getTenSach());
         values.put("tacGia", suasach.getTacGia());
-        values.put("soLuong", suasach.getSoLuong());
-        values.put("nhaXuatBan", suasach.getNhaXuatBan());
         values.put("giaBia", suasach.getGia());
+        values.put("nhaXuatBan", suasach.getNhaXuatBan());
+        values.put("soLuong", suasach.getSoLuong());
         values.put("maTheloai",suasach.getMaTheloai());
         long row = db_update.update("SACH", values, "maSach=?", new String[]{suasach.getMaSach()});
         return row >0;
