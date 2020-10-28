@@ -3,9 +3,15 @@ package com.example.test.mode;
 public class HoaDonChiTiet {
     private int mahdct,masach,soluong,mahd,giabia,tongtien;
     String tensach;
+    int tongsosach,tongsotien;
 
     public HoaDonChiTiet() {
 
+    }
+
+    public HoaDonChiTiet(int tongsosach, int tongsotien) {
+        this.tongsosach = tongsosach;
+        this.tongsotien = tongsotien;
     }
 
     public HoaDonChiTiet(int soluong, String tensach) {
@@ -35,6 +41,22 @@ public class HoaDonChiTiet {
         this.giabia = giabia;
         this.tongtien = tongtien;
         this.tensach = tensach;
+    }
+
+    public int getTongsosach() {
+        return tongsosach;
+    }
+
+    public void setTongsosach(int tongsosach) {
+        this.tongsosach = tongsosach;
+    }
+
+    public int getTongsotien() {
+        return tongsotien;
+    }
+
+    public void setTongsotien(int tongsotien) {
+        this.tongsotien = tongsotien;
     }
 
     public int getGiabia() {

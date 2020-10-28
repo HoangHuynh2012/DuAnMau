@@ -51,6 +51,33 @@ public class HoaDonChiTietDAO {
         return list;
     }
 
+    public static ArrayList<HoaDonChiTiet> getThongKe(Context context) {
+        ArrayList<HoaDonChiTiet> list = new ArrayList<>();
+        database_hoadon = new Database(context);
+        db_hoadon = database_hoadon.getReadableDatabase();
+        //truy van toan bo du lieu tu bang nguoi dung
+        String sql = "SELECT Sum(HOADONCHITIET.soluong) ,Sum(SACH.giaBia * HOADONCHITIET.soLuong) AS TongTien FROM HOADONCHITIET Inner join SACH on SACH.maSach = HOADONCHITIET.maSach";
+        Cursor cs = db_hoadon.rawQuery(sql, null);
+        list.clear();
+        cs.moveToFirst();
+        while (!cs.isAfterLast()) {
+            try {
+                Integer tongsosach = cs.getInt(0);
+                Integer tongsotien = cs.getInt(1);
+                HoaDonChiTiet hd = new HoaDonChiTiet(tongsosach, tongsotien);
+                //add vao list
+                list.add(hd);
+                //con tro next
+            } catch (Exception e) {
+
+            }
+            cs.moveToNext();
+
+        }
+        cs.close();
+        return list;
+    }
+
     //delete
     public static void delete(int maHoadonChitiet) {
         db_hoadon = database_hoadon.getWritableDatabase();

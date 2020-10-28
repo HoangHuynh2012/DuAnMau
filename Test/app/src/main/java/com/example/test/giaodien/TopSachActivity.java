@@ -68,9 +68,10 @@ public class TopSachActivity extends AppCompatActivity {
         }
 
         BarDataSet barDataSet = new BarDataSet(listBartChart,"Top Sách");
-        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        barDataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
-        barDataSet.setValueTextSize(16f);
+
+        barDataSet.setValueTextSize(20f);
         Description description = new Description();
         description.setText("Tên Sách");
         barChart.setDescription(description);

@@ -26,20 +26,8 @@
             android:layout_gravity="center"
             android:id="@+id/toolbar_thongke" />
     </androidx.appcompat.widget.Toolbar>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbarthongke"
-        android:text="Thống Kê Theo Số Lượng"
-        android:gravity="center"
-        android:fontFamily="@font/font"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="100dp"
-        android:padding="10dp"
-        android:id="@+id/btn_chuyen"
-        />
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/rVthongke"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent"-->
@@ -50,6 +38,29 @@
 <!--        tools:ignore="NotSibling">-->
 
 <!--    </androidx.recyclerview.widget.RecyclerView>-->
+    <Button
+        android:id="@+id/btn_chuyen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarthongke"
+        android:fontFamily="@font/font"
+        android:padding="10dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_centerInParent="true"
+        android:text="Thống Kê Theo Số Lượng" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="asda"
+        android:layout_below="@+id/btn_chuyen"
+        android:fontFamily="@font/font"
+        android:textSize="14dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_centerInParent="true"
+        android:textColor="#DD0F0F"
+        android:id="@+id/tongsotienban"
+        />
+
     <com.github.mikephil.charting.charts.PieChart
         android:layout_width="match_parent"
         android:layout_height="match_parent"

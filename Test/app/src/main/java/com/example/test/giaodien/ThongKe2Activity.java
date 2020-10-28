@@ -8,8 +8,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.test.R;
+import com.example.test.dao.HoaDonChiTietDAO;
 import com.example.test.dao.ThongKeDAO;
 import com.example.test.mode.HoaDonChiTiet;
 import com.github.mikephil.charting.charts.PieChart;
@@ -24,6 +27,7 @@ import java.util.ArrayList;
 
 public class ThongKe2Activity extends AppCompatActivity {
     Toolbar toolbartk;
+    Integer bd;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,8 @@ public class ThongKe2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_thong_ke2);
 
         toolbartk = findViewById(R.id.toolbarthongke);
+        TextView tongsocuon = findViewById(R.id.tongsocuonban);
+
         setSupportActionBar(toolbartk);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
@@ -65,16 +71,21 @@ public class ThongKe2Activity extends AppCompatActivity {
 //        list.add(new PieEntry(500, "2020"));
 
         PieDataSet pieDataSet = new PieDataSet(list, "Thống Kê");
-        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        pieDataSet.setColors(ColorTemplate.PASTEL_COLORS);
         pieDataSet.setValueTextColor(Color.BLACK);
-        pieDataSet.setValueTextSize(16f);
+        pieDataSet.setValueTextSize(14f);
 
         PieData pieData = new PieData(pieDataSet);
 
         pieChart.setData(pieData);
         pieChart.getDescription().setEnabled(false);
-        pieChart.setCenterText("Thống Kê Theo Số Lượng");
+        pieChart.setCenterText("Thống Kê Theo Số Lượng (Cuốn)" );
         pieChart.animate();
-
+        ArrayList<HoaDonChiTiet> listthongke = new ArrayList<>();
+        listthongke = HoaDonChiTietDAO.getThongKe(ThongKe2Activity.this);
+        for (int i =0 ;i<listthongke.size();i++){
+            Integer soluongcuon = listthongke.get(i).getTongsosach();
+            tongsocuon.setText("Tổng Số Sách Bán Được : " + String.valueOf(soluongcuon));
+        }
     }
 }
